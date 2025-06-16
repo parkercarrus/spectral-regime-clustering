@@ -33,10 +33,5 @@ def get_predictions(model: ClusterModel, test_data: List[Tuple[pd.Timestamp, pd.
     preds = model.predict_expected_target(X_test)
     preds_named = pd.DataFrame(preds, columns=target_names)
 
-    evaluation = evaluate_predictions(preds, Y_test)
+    return {'preds': preds_named}
 
-    return {'preds': preds_named,
-            'evals': evaluation}
-
-def evaluate_predictions(preds: pd.DataFrame, Y_test: np.array) -> pd.Series:
-    return pd.Series

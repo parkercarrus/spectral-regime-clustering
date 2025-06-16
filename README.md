@@ -1,4 +1,4 @@
-# ProbaSpectra: Cluster-Based Prediction of ETF Returns Using Spectral Covariance Features
+# Cluster-Based Prediction of ETF Returns Using Spectral Covariance Features
 
 ## 📈 Overview
 

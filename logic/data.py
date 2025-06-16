@@ -2,10 +2,6 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Microcap Biotech Stocks ($50M - $500M Market Cap)
-# These companies exhibit high correlation during FDA events and binary outcomes
-# Updated as of June 2025
-
 X_SYMBOLS = [
     "JPM", "BAC", "GS", "MS", "USB", "PNC", "TFC", "CMA", "SCHW",
     "AXP", "COF", "DFS", "CB", "AIG", "MET", "PGR", "ALL", "PRU", "TRV"

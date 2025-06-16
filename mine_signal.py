@@ -94,14 +94,13 @@ if __name__ == "__main__":
             results.append(result)
 
     results_df = pd.DataFrame(results)
-    print("\n🔝 Top Stock Sets:")
+    print("\n Top Stock Sets:")
     print(results_df.sort_values(by="sharpe", ascending=False).head())
     print(f"Results Calculated in {(time.time() - starttime):.2f} and saved to results.csv")
     results_df.to_csv("results.csv")
 
     best_result = results_df.sort_values(by="sharpe", ascending=False).iloc[0]
     best_stocks = list(best_result['stocks'])
-    print(f"\n📊 Plotting equity curve for top combo: {best_stocks}")
 
     x_subset, y_subset = get_subset_data(x_data, y_data, best_stocks, Y_UNIVERSE)
     x_train, x_test, y_train, y_test = split_train_test(x_subset, y_subset, 2/3)

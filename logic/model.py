@@ -88,12 +88,12 @@ class ClusterModel:
         return (median, var)
     
     def predict_expected_target(self, X_batch):
-        probs = self.predict_proba(X_batch)  # shape: (n_samples, n_clusters)
-        # Get medians per cluster (as vectors)
-        medians = [self.get_prediction(k)[0].values for k in range(self.model.n_components)]  # list of Series → arrays
-        medians_matrix = np.stack(medians)  # shape: (n_clusters, target_dim)
+        probs = self.predict_proba(X_batch) 
+        # Get medians per cluster 
+        medians = [self.get_prediction(k)[0].values for k in range(self.model.n_components)]  # list of Series
+        medians_matrix = np.stack(medians) 
 
         # Weighted average across clusters for each sample
-        expected_targets = probs.dot(medians_matrix)  # shape: (n_samples, target_dim)
+        expected_targets = probs.dot(medians_matrix) 
 
         return expected_targets  # List of expected target vectors per sample
